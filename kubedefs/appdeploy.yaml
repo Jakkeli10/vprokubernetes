@@ -27,6 +27,6 @@ spec:
         - name: init-memcache
           image: busybox:latest
           command: ['sh', '-c', "until nslookup vprocache01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for memcache; sleep 2; done"]
-         - name: init-rabbitmq
+        - name: init-rabbitmq
           image: busybox:latest
           command: ['sh', '-c', "until nslookup vpromq01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for rabbitmq; sleep 2; done"]
